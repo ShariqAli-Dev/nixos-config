@@ -77,9 +77,16 @@
     };
   };
 
-  home.file.".config/nvim".source = "./dotfiles/nvim";
+  home.file.".config/nvim".source = "/etc/nixos/dotfiles/nvim";
 
   home.packages = with pkgs; [
     bat
+    go
+    gopls
+    gotools
+    delve
+    golangci-lint
+    nodejs
+    nodePackages.pnpm
   ];
 }
