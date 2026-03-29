@@ -77,6 +77,8 @@
     };
   };
 
+  home.file.".config/nvim".source = "./dotfiles/nvim";
+
   home.packages = with pkgs; [
     bat
   ];
