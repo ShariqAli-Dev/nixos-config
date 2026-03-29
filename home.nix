@@ -88,5 +88,6 @@
     golangci-lint
     nodejs
     nodePackages.pnpm
+    gh
   ];
 }
