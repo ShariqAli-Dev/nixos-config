@@ -622,8 +622,8 @@ require('lazy').setup({
         pyright = {},
         rust_analyzer = {},
         cssls = {},
-        pbls = {},
-        hydra_lsp = {},
+        -- pbls = {},
+        -- hydra_lsp = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -634,7 +634,7 @@ require('lazy').setup({
         ts_ls = {},
         ols = {
           -- 1.  If you build OLS yourself, uncomment the next line
-          cmd = { '/development/ols/ols' },
+          -- cmd = { '/development/ols/ols' },
 
           ------------------------------------------------------------------
           -- 2.  Things OLS needs *during* the initialize handshake
@@ -700,13 +700,13 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-        'gopls',
-        'typescript-language-server',
-        'eslint-lsp',
+        -- 'stylua', -- Used to format Lua code
+        -- 'gopls',
+        -- 'typescript-language-server',
+        -- 'eslint-lsp',
         'prettierd',
         'markdownlint',
-        'ols',
+        -- 'ols',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -955,8 +955,8 @@ require('lazy').setup({
   },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {

@@ -77,17 +77,49 @@
     };
   };
 
-  home.file.".config/nvim".source = "/etc/nixos/dotfiles/nvim";
+  #home.file.".config/nvim" = {
+   # source = "/etc/nixos/dotfiles/nvim";
+    #recursive = true;
+ # };
 
   home.packages = with pkgs; [
     bat
+    gcc
+    gh
+
     go
     gopls
     gotools
     delve
     golangci-lint
+
     nodejs
     nodePackages.pnpm
-    gh
+    nodePackages.typescript-language-server
+
+    python3
+    uv
+    pyright
+    black
+    isort
+
+    rustc
+    cargo
+    rust-analyzer
+
+    lua-language-server
+    stylua
+
+    clang-tools
+
+    ols
+
+    vscode-langservers-extracted
+    
+    nil #nix
+
+    ripgrep
+    fd
+    gnumake
   ];
 }
