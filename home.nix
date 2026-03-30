@@ -82,16 +82,24 @@
     #recursive = true;
  # };
 
+
   home.packages = with pkgs; [
     bat
     gcc
     gh
+    ripgrep
+    fd
+    gnumake
 
     go
     gopls
     gotools
     delve
     golangci-lint
+
+    vscode.fhs
+    claude-code
+    discord-ptb
 
     nodejs
     nodePackages.pnpm
@@ -118,8 +126,5 @@
     
     nil #nix
 
-    ripgrep
-    fd
-    gnumake
   ];
 }

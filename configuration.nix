@@ -14,6 +14,10 @@ in
       (import "${home-manager}/nixos")
     ];
 
+  virtualisation.docker = {
+    enable = true;
+  };
+
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
   home-manager.backupFileExtension = "backup";
@@ -73,7 +77,7 @@ in
   users.users.shariq = {
     isNormalUser = true;
     description = "Shariq";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
   };
 
@@ -91,6 +95,7 @@ in
     neovim
     git
     google-chrome
+    tree
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
